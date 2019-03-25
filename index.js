@@ -5,7 +5,15 @@ const schema = require('./schema')
 
 const chalk = require('chalk')
 
-const root = { message: () => 'Hello World!' }
+const root = { client: () => {
+  return {
+    id: 1,
+    name: 'fernando',
+    lastName: 'Castillo Torrico',
+    email: 'fernandocto.scz@gmail.com',
+    company: 'sorbaSoft'
+  }
+}}
 
 app.use('/', graphqlHTTP({
   schema,

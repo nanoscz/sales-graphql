@@ -1,10 +1,11 @@
 
 class Client {
-  constructor (id, { name, lastName, company }) {
+  constructor (id, { name, lastName, company, type }) {
     this.id = id
     this.name = name
     this.lastName = lastName
     this.company = company
+    this.type = type
   }
 }
 

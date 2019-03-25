@@ -2,16 +2,12 @@ const express = require('express')
 const app = express()
 const graphqlHTTP = require('express-graphql')
 
-const schema = require('./schema')
-const resolver = require('./resolver')
+const { schema } = require('./graphql/schema')
 
 const chalk = require('chalk')
 
-const root = resolver
-
 app.use('/', graphqlHTTP({
   schema,
-  rootValue: root,
   graphiql: true
 }))
 

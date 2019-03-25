@@ -5,8 +5,11 @@ const schema = buildschema(`
     id: ID
     name: String
     lastName: String
-    email: String
+    emails: [Email]
     company: String
+  }
+  type Email {
+    email: String
   }
   type Query {
     client: Client

@@ -10,7 +10,10 @@ const root = { client: () => {
     id: 1,
     name: 'fernando',
     lastName: 'Castillo Torrico',
-    email: 'fernandocto.scz@gmail.com',
+    emails: [
+      {email: 'fernandocto.scz@gmail.com'},
+      {email: 'nanoscz@gmail.com'}
+    ],
     company: 'sorbaSoft'
   }
 }}

@@ -14,6 +14,15 @@ const schema = buildschema(`
   type Query {
     client: Client
   }
+  input ClientInput {
+    id: ID
+    name: String!
+    lastName: String!
+    company: String!
+  }
+  type Mutation {
+    addClient(input: ClientInput) : Client
+  }
 `)
 
 module.exports = schema

@@ -24,7 +24,8 @@ enum typeClient {
 }
 """ Get Clients """
 type Query {
-  getClient(id: ID): Client
+  getClientByID(id: ID!): Client
+  getClients(limit: Int): [Client]
 }
 """ Fields Emails """
 input inputEmail {
@@ -48,4 +49,6 @@ input ClientInput {
 """ Mutation add new client"""
 type Mutation {
   addClient(input: ClientInput) : Client
+  updateClient(input: ClientInput) : Client
+  deleteClient(id: ID!): String
 }

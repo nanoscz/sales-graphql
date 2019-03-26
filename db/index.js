@@ -15,6 +15,6 @@ const clientSchema = new mongoose.Schema({
   orders: Array,
 })
 
-const Client = mongoose.model('client', clientSchema)
+const Clients = mongoose.model('clients', clientSchema)
 
-module.exports = { Client }
+module.exports = { Clients }

@@ -1,14 +1,17 @@
-const express = require('express')
-const app = express()
-const graphqlHTTP = require('express-graphql')
+'use strict'
 
-const { schema } = require('./graphql/schema')
+const { ApolloServer } = require('apollo-server-express')
+const express = require('express')
+const port = process.PORT || 4000
+
+const { resolvers } = require('./graphql/resolver')
+const { typeDefs } = require('./graphql/schema')
 
 const chalk = require('chalk')
 
-app.use('/', graphqlHTTP({
-  schema,
-  graphiql: true
-}))
+const app = express()
+const server  = new ApolloServer({typeDefs, resolvers})
+server.applyMiddleware({app})
 
-app.listen(8000, () => console.log(`${chalk.green('[Running]')} Server listen port 8000.`))
+app.listen(port, () => console.log(`${chalk.green('[Running]')}, 
+    Server: http://localhost:${port}${server.graphqlPath}`))
